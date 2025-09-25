@@ -1,0 +1,76 @@
+{
+    "name": "Main",
+    "maps": [
+        {
+            "name": "MainMap",
+            "id": "0551256d-4679-4141-b81d-ec882246bc19",
+            "actions": [
+                {
+                    "name": "ActivateBall",
+                    "type": "Button",
+                    "id": "a1ab5126-a596-4335-b638-98ee3b9eb505",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SetBallStartPoint",
+                    "type": "Value",
+                    "id": "8938fd0f-2102-486a-9dd9-ec7ddd82c369",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c0a42882-a9cc-4027-a431-be0d2e079b30",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivateBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "516a75a6-fde7-4111-902e-820acdf3003f",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivateBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "983b3f90-6ea3-4e3a-8e28-81974af77aa3",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SetBallStartPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1f80c2b-5cbd-4ead-84de-4c2643665d2b",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SetBallStartPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
