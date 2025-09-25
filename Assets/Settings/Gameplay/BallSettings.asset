@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e7ab07725a63c41addb922339ebe0f, type: 3}
   m_Name: BallSettings
   m_EditorClassIdentifier: 
-  _lifetime: 1.2
+  _lifetime: 1
   _speed: 30
