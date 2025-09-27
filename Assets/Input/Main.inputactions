@@ -18,7 +18,7 @@
                     "name": "SetBallStartPoint",
                     "type": "Value",
                     "id": "8938fd0f-2102-486a-9dd9-ec7ddd82c369",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -53,7 +53,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Mouse",
                     "action": "SetBallStartPoint",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -61,10 +61,10 @@
                 {
                     "name": "",
                     "id": "b1f80c2b-5cbd-4ead-84de-4c2643665d2b",
-                    "path": "<Touchscreen>/position",
+                    "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Touch",
                     "action": "SetBallStartPoint",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -72,5 +72,28 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Mouse",
+            "bindingGroup": "Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Touch",
+            "bindingGroup": "Touch",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

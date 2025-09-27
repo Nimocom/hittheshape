@@ -40,7 +40,7 @@ public partial class @PlayerInputActionService: IInputActionCollection2, IDispos
                     ""name"": ""SetBallStartPoint"",
                     ""type"": ""Value"",
                     ""id"": ""8938fd0f-2102-486a-9dd9-ec7ddd82c369"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -75,7 +75,7 @@ public partial class @PlayerInputActionService: IInputActionCollection2, IDispos
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Mouse"",
                     ""action"": ""SetBallStartPoint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -83,10 +83,10 @@ public partial class @PlayerInputActionService: IInputActionCollection2, IDispos
                 {
                     ""name"": """",
                     ""id"": ""b1f80c2b-5cbd-4ead-84de-4c2643665d2b"",
-                    ""path"": ""<Touchscreen>/position"",
+                    ""path"": ""<Touchscreen>/primaryTouch/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Touch"",
                     ""action"": ""SetBallStartPoint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -94,7 +94,30 @@ public partial class @PlayerInputActionService: IInputActionCollection2, IDispos
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Mouse"",
+            ""bindingGroup"": ""Mouse"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Touch"",
+            ""bindingGroup"": ""Touch"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Touchscreen>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // MainMap
         m_MainMap = asset.FindActionMap("MainMap", throwIfNotFound: true);
@@ -216,6 +239,24 @@ public partial class @PlayerInputActionService: IInputActionCollection2, IDispos
         }
     }
     public MainMapActions @MainMap => new MainMapActions(this);
+    private int m_MouseSchemeIndex = -1;
+    public InputControlScheme MouseScheme
+    {
+        get
+        {
+            if (m_MouseSchemeIndex == -1) m_MouseSchemeIndex = asset.FindControlSchemeIndex("Mouse");
+            return asset.controlSchemes[m_MouseSchemeIndex];
+        }
+    }
+    private int m_TouchSchemeIndex = -1;
+    public InputControlScheme TouchScheme
+    {
+        get
+        {
+            if (m_TouchSchemeIndex == -1) m_TouchSchemeIndex = asset.FindControlSchemeIndex("Touch");
+            return asset.controlSchemes[m_TouchSchemeIndex];
+        }
+    }
     public interface IMainMapActions
     {
         void OnActivateBall(InputAction.CallbackContext context);
